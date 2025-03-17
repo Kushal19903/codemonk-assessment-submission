@@ -44,6 +44,19 @@ Fashion Product Classification Project Improvement Plan
 
 # Fashion Product Classification
 
+# output
+
+<img src="front1.png" alt="workflow" width="70%">
+
+# Demo:
+
+<img src="front2.png" alt="workflow" width="70%">
+
+<img src="output.png" alt="workflow" width="70%">
+
+<img src="samples.png" alt="workflow" width="70%">
+
+
 ## Project Setup
 
 ### Prerequisites
