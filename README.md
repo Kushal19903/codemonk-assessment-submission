@@ -67,7 +67,7 @@ Fashion Product Classification Project Improvement Plan
 
 #### 1. Navigate to the Project Directory
 ```sh
-cd "C:\Users\Kushal S\Desktop\codemonk2"
+cd "C:\Users\Kushal S\codemonk assessment fashion"
 ```
 
 #### 2. Activate the Conda Environment
@@ -105,18 +105,7 @@ Follow these detailed instructions to set up and run the improved fashion produc
 First, let's set up a Python environment for the project:
 
 ```sh
-# Create a new directory for the project
-mkdir fashion-classification
-cd fashion-classification
-
-# Create a virtual environment
-python -m venv venv
-
-# Activate the virtual environment
-# On Windows:
-venv\Scripts\activate
-# On macOS/Linux:
-source venv/bin/activate
+conda activate codemonk
 ```
 
 ## 2. Install Dependencies
@@ -163,6 +152,12 @@ kaggle datasets download -d paramaggarwal/fashion-product-images-dataset
 unzip fashion-product-images-dataset.zip -d data/
 ```
 
+## download and load dataset in data folder for running model training train.py
+
+```bash
+download dataset from kaggle by above link and add in data folder
+```
+
 ## 5. Prepare Sample Images
 
 ```sh
@@ -172,57 +167,78 @@ cp data/fashion-dataset/images/10003.jpg sample_images/
 cp data/fashion-dataset/images/10004.jpg sample_images/
 ```
 
-## 6. Save the Improved Code Files
+## 6. run the Code Files one by one for full execution
 
-1. Save `improved_fashion_classification.py`
-2. Save `improved_app.py`
-3. Save `templates/index.html`
+# run train.py to run code and it will ask user weather to retrain model
+```bash
+ train.py
+ ```
+# do you want to retrain the model
 
-## 7. Update File Paths
-
-In `improved_fashion_classification.py`, update:
-
-```python
-# Define paths
-data_dir = "data/fashion-dataset"
-images_dir = os.path.join(data_dir, "images")
-styles_file = os.path.join(data_dir, "styles.csv")
+```bash
+do you want to retrain model (yes/no):
+```
+# if "YES"
+```bash
+model training again
 ```
 
-## 8. Train the Model
+# save models a
+```models
+best_fashion_model.pt
+```
+```models
+label_encoders.pkl
+```
+
+# no
+```bash
+model evaluation started
+```
+# run app.py do see demonstration of this project
+
+ ```bash
+app.py
+```
+# explore webpage and add sample images and predict
+
+# use templates folder to rendertemplate using flask
+
+```note
+Save `templates/index.html`
+```
+
+## 7. if you want to evalute model after training model
+
+```bash
+evaluate.py
+```
+# give output graphs and all output samples in terminal for code running demonstration
+
+# if u want to save all demonstration files without training and evaluating 
+```bash
+save_visualization.py
+```
+# it will save all procedure output in 
+```folder
+visualization_results
+```
+
+## . Run the Flask API
 
 ```sh
-python improved_fashion_classification.py
+python app.py
 ```
 
-## 9. Run the Flask API
-
-```sh
-python improved_app.py
-```
-
-## 10. Access the Web Interface
+##  Access the Web Interface
 
 Open: `http://localhost:5000`
 
-## 11. Test with External Images
+##  Test with External Images
 
 1. Download fashion product images
 2. Upload them via the web interface
 
-## 12. Troubleshooting
-
-### Model Training Issues:
-- Ensure enough disk space
-- Reduce batch size if memory issues occur
-
-### Flask API Issues:
-- Check model paths
-- Ensure required directories exist
-
-### Web Interface Issues:
-- Clear browser cache
-- Check template file paths
 
 ## 13. Optional: Deploy to Production
 
