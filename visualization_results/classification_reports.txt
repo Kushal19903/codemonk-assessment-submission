@@ -1,0 +1,26 @@
+
+
+Evaluation for articleType:
+Error evaluating task articleType: Number of classes, 42, does not match size of target_names, 10. Try specifying the labels parameter
+
+
+Evaluation for baseColour:
+Error evaluating task baseColour: Number of classes, 25, does not match size of target_names, 10. Try specifying the labels parameter
+
+
+Evaluation for season:
+Error evaluating task season: Number of classes, 4, does not match size of target_names, 5. Try specifying the labels parameter
+
+
+Evaluation for gender:
+              precision    recall  f1-score   support
+
+        Boys       0.00      0.00      0.00         4
+       Girls       0.00      0.00      0.00         1
+         Men       0.52      0.74      0.62        43
+      Unisex       0.00      0.00      0.00         6
+       Women       0.62      0.52      0.56        46
+
+    accuracy                           0.56       100
+   macro avg       0.23      0.25      0.24       100
+weighted avg       0.51      0.56      0.52       100

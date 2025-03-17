@@ -1,0 +1,602 @@
+<!-- Add your HTML template here -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Product Classifier</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #6c63ff;
+            --secondary-color: #ff6584;
+            --dark-color: #2c3e50;
+            --light-color: #f8f9fa;
+            --success-color: #28a745;
+            --info-color: #17a2b8;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .navbar {
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: white !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .main-container {
+            flex: 1;
+            padding: 2rem 0;
+        }
+        
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            border-radius: 10px 10px 0 0 !important;
+        }
+        
+        .upload-area {
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .upload-area:hover, .upload-area.dragover {
+            border-color: var(--primary-color);
+            background-color: rgba(108, 99, 255, 0.05);
+        }
+        
+        .upload-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: #5a52d5;
+            border-color: #5a52d5;
+        }
+        
+        .result-card {
+            display: none;
+        }
+        
+        .prediction-item {
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+        }
+        
+        .prediction-label {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .prediction-value {
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+        
+        .confidence-bar {
+            height: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+        
+        .confidence-level {
+            height: 100%;
+            background-color: var(--primary-color);
+            border-radius: 5px;
+        }
+        
+        .sample-image {
+            cursor: pointer;
+            border-radius: 5px;
+            transition: transform 0.2s ease;
+            max-height: 150px;
+            object-fit: cover;
+        }
+        
+        .sample-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .loading-spinner {
+            display: none;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .spinner-border {
+            color: var(--primary-color);
+            width: 3rem;
+            height: 3rem;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+        
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--primary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-tshirt me-2"></i>
+                Fashion Product Classifier
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#samples">Samples</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/Kushal19903/codemonk" target="_blank">
+                            <i class="fab fa-github me-1"></i> GitHub
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="hero-title">Fashion Product Classification</h1>
+            <p class="hero-subtitle">
+                Upload an image of a fashion product and our AI will classify its type, color, season, and gender.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container main-container">
+        <div class="row">
+            <!-- Upload Section -->
+            <div class="col-lg-8 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <i class="fas fa-cloud-upload-alt me-2"></i> Upload Image
+                    </div>
+                    <div class="card-body">
+                        <div id="upload-area" class="upload-area">
+                            <i class="fas fa-file-image upload-icon"></i>
+                            <h5>Drag & Drop your image here</h5>
+                            <p class="text-muted">or click to browse files</p>
+                            <input type="file" id="file-input" accept=".jpg,.jpeg,.png" style="display: none;">
+                        </div>
+                        
+                        <div class="mt-3 text-center">
+                            <button id="upload-btn" class="btn btn-primary" disabled>
+                                <i class="fas fa-upload me-2"></i> Upload & Classify
+                            </button>
+                        </div>
+                        
+                        <!-- Loading Spinner -->
+                        <div id="loading-spinner" class="loading-spinner">
+                            <div class="spinner-border" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <p class="mt-3">Analyzing image...</p>
+                        </div>
+                        
+                        <!-- Preview Image -->
+                        <div id="preview-container" class="mt-4 text-center" style="display: none;">
+                            <h5>Selected Image:</h5>
+                            <img id="preview-image" class="img-fluid mt-2 rounded" style="max-height: 300px;" alt="Preview">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Results Section -->
+            <div class="col-lg-4 mb-4">
+                <div id="result-card" class="card result-card">
+                    <div class="card-header">
+                        <i class="fas fa-chart-pie me-2"></i> Classification Results
+                    </div>
+                    <div class="card-body">
+                        <div id="results-container">
+                            <!-- Article Type -->
+                            <div class="prediction-item">
+                                <div class="prediction-label">Article Type:</div>
+                                <div id="articleType" class="prediction-value">-</div>
+                                <div class="confidence-bar">
+                                    <div id="articleType-confidence" class="confidence-level" style="width: 0%;"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Base Color -->
+                            <div class="prediction-item">
+                                <div class="prediction-label">Base Color:</div>
+                                <div id="baseColour" class="prediction-value">-</div>
+                                <div class="confidence-bar">
+                                    <div id="baseColour-confidence" class="confidence-level" style="width: 0%;"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Season -->
+                            <div class="prediction-item">
+                                <div class="prediction-label">Season:</div>
+                                <div id="season" class="prediction-value">-</div>
+                                <div class="confidence-bar">
+                                    <div id="season-confidence" class="confidence-level" style="width: 0%;"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Gender -->
+                            <div class="prediction-item">
+                                <div class="prediction-label">Gender:</div>
+                                <div id="gender" class="prediction-value">-</div>
+                                <div class="confidence-bar">
+                                    <div id="gender-confidence" class="confidence-level" style="width: 0%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sample Images Section -->
+        <section id="samples" class="mt-5">
+            <h2 class="text-center mb-4">Try with Sample Images</h2>
+            <div class="row">
+                {% for image in sample_images %}
+                <div class="col-6 col-md-3 mb-4">
+                    <div class="card h-100">
+                        <img src="{{ url_for('sample_image', filename=image) }}" class="card-img-top sample-image" alt="Sample Image" data-filename="{{ image }}">
+                        <div class="card-body text-center">
+                            <button class="btn btn-sm btn-outline-primary classify-sample" data-filename="{{ image }}">
+                                Classify
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="mt-5">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-info-circle me-2"></i> About This Project
+                </div>
+                <div class="card-body">
+                    <h5>Fashion Product Classification using Deep Learning</h5>
+                    <p>
+                        This project uses a multi-task deep learning model to classify fashion product images into multiple categories:
+                    </p>
+                    <ul>
+                        <li><strong>Article Type:</strong> Identifies the type of clothing (e.g., T-shirt, Jeans, Dress)</li>
+                        <li><strong>Base Color:</strong> Determines the primary color of the product</li>
+                        <li><strong>Season:</strong> Suggests the appropriate season for the product</li>
+                        <li><strong>Gender:</strong> Classifies whether the product is designed for Men, Women, or Unisex</li>
+                    </ul>
+                    <p>
+                        The model is built using EfficientNet architecture and trained on the Fashion Product Images dataset.
+                        It achieves high accuracy across all classification tasks.
+                    </p>
+                    <h5 class="mt-4">Technical Details:</h5>
+                    <ul>
+                        <li>Deep Learning Framework: TensorFlow</li>
+                        <li>Base Model: EfficientNetB0</li>
+                        <li>Training Dataset: Fashion Product Images Dataset</li>
+                        <li>Backend: Flask API</li>
+                        <li>Frontend: HTML, CSS, JavaScript with Bootstrap</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <p>© 2025 Fashion Product Classifier | Developed by Kushal S</p>
+            <div class="social-icons">
+                <a href="https://github.com/Kushal19903/" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/kushal-s-747006250/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // DOM Elements
+            const uploadArea = document.getElementById('upload-area');
+            const fileInput = document.getElementById('file-input');
+            const uploadBtn = document.getElementById('upload-btn');
+            const previewContainer = document.getElementById('preview-container');
+            const previewImage = document.getElementById('preview-image');
+            const resultCard = document.getElementById('result-card');
+            const loadingSpinner = document.getElementById('loading-spinner');
+            const sampleImages = document.querySelectorAll('.sample-image');
+            const classifySampleBtns = document.querySelectorAll('.classify-sample');
+            
+            // Result elements
+            const articleType = document.getElementById('articleType');
+            const baseColour = document.getElementById('baseColour');
+            const season = document.getElementById('season');
+            const gender = document.getElementById('gender');
+            
+            // Confidence bars
+            const articleTypeConfidence = document.getElementById('articleType-confidence');
+            const baseColourConfidence = document.getElementById('baseColour-confidence');
+            const seasonConfidence = document.getElementById('season-confidence');
+            const genderConfidence = document.getElementById('gender-confidence');
+            
+            // Click on upload area to trigger file input
+            uploadArea.addEventListener('click', () => {
+                fileInput.click();
+            });
+            
+            // Handle drag and drop
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                uploadArea.addEventListener(eventName, preventDefaults, false);
+            });
+            
+            function preventDefaults(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            
+            ['dragenter', 'dragover'].forEach(eventName => {
+                uploadArea.addEventListener(eventName, () => {
+                    uploadArea.classList.add('dragover');
+                }, false);
+            });
+            
+            ['dragleave', 'drop'].forEach(eventName => {
+                uploadArea.addEventListener(eventName, () => {
+                    uploadArea.classList.remove('dragover');
+                }, false);
+            });
+            
+            // Handle dropped files
+            uploadArea.addEventListener('drop', (e) => {
+                const dt = e.dataTransfer;
+                const files = dt.files;
+                
+                if (files.length) {
+                    handleFiles(files);
+                }
+            }, false);
+            
+            // Handle selected files
+            fileInput.addEventListener('change', () => {
+                if (fileInput.files.length) {
+                    handleFiles(fileInput.files);
+                }
+            });
+            
+            // Process the selected files
+            function handleFiles(files) {
+                const file = files[0];
+                
+                // Check if file is an image
+                if (!file.type.match('image.*')) {
+                    alert('Please select an image file (jpg, jpeg, or png).');
+                    return;
+                }
+                
+                // Enable upload button
+                uploadBtn.disabled = false;
+                
+                // Show image preview
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    previewImage.src = e.target.result;
+                    previewContainer.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+            
+            // Upload and classify image
+            uploadBtn.addEventListener('click', () => {
+                if (!fileInput.files.length) return;
+                
+                // Show loading spinner
+                loadingSpinner.style.display = 'block';
+                resultCard.style.display = 'none';
+                
+                // Create form data
+                const formData = new FormData();
+                formData.append('file', fileInput.files[0]);
+                
+                // Send request to API
+                fetch('/predict', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Hide loading spinner
+                    loadingSpinner.style.display = 'none';
+                    
+                    // Display results
+                    displayResults(data);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    loadingSpinner.style.display = 'none';
+                    alert('An error occurred while classifying the image. Please try again.');
+                });
+            });
+            
+            // Classify sample images
+            classifySampleBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const filename = btn.getAttribute('data-filename');
+                    classifySampleImage(filename);
+                });
+            });
+            
+            sampleImages.forEach(img => {
+                img.addEventListener('click', () => {
+                    const filename = img.getAttribute('data-filename');
+                    classifySampleImage(filename);
+                });
+            });
+            
+            function classifySampleImage(filename) {
+                // Show loading spinner
+                loadingSpinner.style.display = 'block';
+                resultCard.style.display = 'none';
+                
+                // Show preview of the sample image
+                previewImage.src = `/sample_images/${filename}`;
+                previewContainer.style.display = 'block';
+                
+                // Send request to API
+                fetch(`/predict_sample/${filename}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Hide loading spinner
+                    loadingSpinner.style.display = 'none';
+                    
+                    // Display results
+                    displayResults(data);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    loadingSpinner.style.display = 'none';
+                    alert('An error occurred while classifying the image. Please try again.');
+                });
+            }
+            
+            // Display classification results
+            function displayResults(data) {
+                // Show result card
+                resultCard.style.display = 'block';
+                
+                // Update result values
+                articleType.textContent = data.articleType.class || 'Unknown';
+                baseColour.textContent = data.baseColour.class || 'Unknown';
+                season.textContent = data.season.class || 'Unknown';
+                gender.textContent = data.gender.class || 'Unknown';
+                
+                // Update confidence bars
+                articleTypeConfidence.style.width = `${data.articleType.confidence * 100}%`;
+                baseColourConfidence.style.width = `${data.baseColour.confidence * 100}%`;
+                seasonConfidence.style.width = `${data.season.confidence * 100}%`;
+                genderConfidence.style.width = `${data.gender.confidence * 100}%`;
+                
+                // Scroll to results
+                resultCard.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    </script>
+</body>
+</html>
