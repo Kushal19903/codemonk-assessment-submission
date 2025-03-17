@@ -1,0 +1,186 @@
+2025-03-14 01:11:40,188 - __main__ - INFO - Loading model from fashion_product_model (1).h5
+2025-03-14 01:11:40,191 - __main__ - ERROR - Error loading model or encoders: [Errno 2] Unable to synchronously open file (unable to open file: name = 'fashion_product_model (1).h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+2025-03-14 01:13:50,326 - __main__ - INFO - Loading model from fashion_product_model (1).h5
+2025-03-14 01:13:51,212 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-03-14 01:13:51,220 - __main__ - INFO - Loading label encoders from label_encoders.pkl
+2025-03-14 01:13:51,249 - __main__ - INFO - Model and label encoders loaded successfully
+2025-03-14 01:13:51,252 - __main__ - INFO - Starting Fashion Product Classification API
+2025-03-14 01:13:51,280 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.106:5000
+2025-03-14 01:13:51,280 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-14 01:13:54,896 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 01:13:54] "GET / HTTP/1.1" 200 -
+2025-03-14 01:14:42,763 - __main__ - INFO - File saved to uploads\6b6c3730-5a1c-4826-b698-8a425463de54_051d64772f1b38ff476fbf0a807f365a_images.jpg
+2025-03-14 01:14:44,090 - __main__ - INFO - Function predict took 1.34 seconds to execute
+2025-03-14 01:14:44,091 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 01:14:44] "POST /predict HTTP/1.1" 200 -
+2025-03-14 01:14:56,198 - __main__ - INFO - File saved to uploads\68478435-50a2-48a7-919b-8ab3974abbb1_9c1b19682ecf926c296f520d5d6e0972_images.jpg
+2025-03-14 01:14:56,316 - __main__ - INFO - Function predict took 0.12 seconds to execute
+2025-03-14 01:14:56,317 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 01:14:56] "POST /predict HTTP/1.1" 200 -
+2025-03-14 01:15:05,162 - __main__ - INFO - File saved to uploads\9a15c373-399a-4d4c-b103-cca74685fe07_8153dc35d9a5420eeb93922067137db6_images.jpg
+2025-03-14 01:15:05,274 - __main__ - INFO - Function predict took 0.11 seconds to execute
+2025-03-14 01:15:05,275 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 01:15:05] "POST /predict HTTP/1.1" 200 -
+2025-03-14 01:15:13,182 - __main__ - INFO - File saved to uploads\566060ca-03ec-4b7c-8c64-bdae4064f96d_8153dc35d9a5420eeb93922067137db6_images.jpg
+2025-03-14 01:15:13,294 - __main__ - INFO - Function predict took 0.11 seconds to execute
+2025-03-14 01:15:13,295 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 01:15:13] "POST /predict HTTP/1.1" 200 -
+2025-03-14 01:15:19,698 - __main__ - INFO - File saved to uploads\e49a2192-c0bc-4e3d-aa23-9da687e736b9_4850873d0c417e6480a26059f83aac29_images.jpg
+2025-03-14 01:15:19,831 - __main__ - INFO - Function predict took 0.14 seconds to execute
+2025-03-14 01:15:19,832 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 01:15:19] "POST /predict HTTP/1.1" 200 -
+2025-03-14 09:58:08,977 - __main__ - INFO - Loading model from fashion_product_model (1).h5
+2025-03-14 09:58:10,732 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-03-14 09:58:10,746 - __main__ - INFO - Loading label encoders from label_encoders.pkl
+2025-03-14 09:58:10,928 - __main__ - INFO - Model and label encoders loaded successfully
+2025-03-14 09:58:10,932 - __main__ - INFO - Starting Fashion Product Classification API
+2025-03-14 09:58:10,983 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.106:5000
+2025-03-14 09:58:10,984 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-14 09:58:21,546 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 09:58:21] "GET / HTTP/1.1" 200 -
+2025-03-14 09:58:23,518 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 09:58:23] "GET /sample_images/051d64772f1b38ff476fbf0a807f365a_images.jpg HTTP/1.1" 200 -
+2025-03-14 09:58:23,518 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 09:58:23] "GET /sample_images/8153dc35d9a5420eeb93922067137db6_images.jpg HTTP/1.1" 200 -
+2025-03-14 09:58:23,529 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 09:58:23] "GET /sample_images/7a5b82d1372a7a5c6de67ae7a314fd91_images.jpg HTTP/1.1" 200 -
+2025-03-14 09:58:23,530 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 09:58:23] "GET /sample_images/WhatsApp%20Image%202025-03-08%20at%2021.09.05_dc2b24aa.jpg HTTP/1.1" 200 -
+2025-03-14 09:58:23,530 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 09:58:23] "GET /sample_images/9c1b19682ecf926c296f520d5d6e0972_images.jpg HTTP/1.1" 200 -
+2025-03-14 09:58:23,531 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 09:58:23] "GET /sample_images/4850873d0c417e6480a26059f83aac29_images.jpg HTTP/1.1" 200 -
+2025-03-14 09:58:35,189 - __main__ - INFO - Function predict_sample took 2.59 seconds to execute
+2025-03-14 09:58:35,190 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 09:58:35] "GET /predict_sample/051d64772f1b38ff476fbf0a807f365a_images.jpg HTTP/1.1" 200 -
+2025-03-14 10:06:32,639 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 10:06:32] "GET / HTTP/1.1" 200 -
+2025-03-14 10:06:32,702 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 10:06:32] "[36mGET /sample_images/051d64772f1b38ff476fbf0a807f365a_images.jpg HTTP/1.1[0m" 304 -
+2025-03-14 10:06:32,704 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 10:06:32] "[36mGET /sample_images/4850873d0c417e6480a26059f83aac29_images.jpg HTTP/1.1[0m" 304 -
+2025-03-14 10:06:32,711 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 10:06:32] "[36mGET /sample_images/7a5b82d1372a7a5c6de67ae7a314fd91_images.jpg HTTP/1.1[0m" 304 -
+2025-03-14 10:06:32,717 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 10:06:32] "[36mGET /sample_images/8153dc35d9a5420eeb93922067137db6_images.jpg HTTP/1.1[0m" 304 -
+2025-03-14 10:06:32,742 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 10:06:32] "[36mGET /sample_images/WhatsApp%20Image%202025-03-08%20at%2021.09.05_dc2b24aa.jpg HTTP/1.1[0m" 304 -
+2025-03-14 10:06:32,774 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 10:06:32] "[36mGET /sample_images/9c1b19682ecf926c296f520d5d6e0972_images.jpg HTTP/1.1[0m" 304 -
+2025-03-14 10:09:39,657 - __main__ - INFO - Loading model from fashion_product_model (1).h5
+2025-03-14 10:09:41,346 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-03-14 10:09:41,360 - __main__ - INFO - Loading label encoders from label_encoders.pkl
+2025-03-14 10:09:41,435 - __main__ - INFO - Model and label encoders loaded successfully
+2025-03-14 10:09:41,444 - __main__ - INFO - Starting Fashion Product Classification API
+2025-03-14 10:09:41,494 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.106:5000
+2025-03-14 10:09:41,495 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-14 10:09:44,189 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 10:09:44] "GET / HTTP/1.1" 200 -
+2025-03-14 10:09:46,076 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 10:09:46] "[36mGET /sample_images/WhatsApp%20Image%202025-03-08%20at%2021.09.05_dc2b24aa.jpg HTTP/1.1[0m" 304 -
+2025-03-14 10:09:46,081 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 10:09:46] "[36mGET /sample_images/7a5b82d1372a7a5c6de67ae7a314fd91_images.jpg HTTP/1.1[0m" 304 -
+2025-03-14 10:09:46,082 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 10:09:46] "[36mGET /sample_images/9c1b19682ecf926c296f520d5d6e0972_images.jpg HTTP/1.1[0m" 304 -
+2025-03-14 10:09:46,088 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 10:09:46] "[36mGET /sample_images/8153dc35d9a5420eeb93922067137db6_images.jpg HTTP/1.1[0m" 304 -
+2025-03-14 10:09:46,089 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 10:09:46] "[36mGET /sample_images/051d64772f1b38ff476fbf0a807f365a_images.jpg HTTP/1.1[0m" 304 -
+2025-03-14 10:09:46,102 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 10:09:46] "[36mGET /sample_images/4850873d0c417e6480a26059f83aac29_images.jpg HTTP/1.1[0m" 304 -
+2025-03-14 10:15:45,866 - __main__ - INFO - File saved to uploads\b9a9b703-f5cc-4109-8a26-59288ea1ff02_051d64772f1b38ff476fbf0a807f365a_images.jpg
+2025-03-14 10:15:47,894 - __main__ - INFO - Function predict took 2.12 seconds to execute
+2025-03-14 10:15:47,903 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 10:15:47] "POST /predict HTTP/1.1" 200 -
+2025-03-14 11:13:26,729 - __main__ - INFO - File saved to uploads\986de2eb-2d07-4991-9bd0-84298929120a_9c1b19682ecf926c296f520d5d6e0972_images.jpg
+2025-03-14 11:13:27,971 - __main__ - INFO - Function predict took 1.30 seconds to execute
+2025-03-14 11:13:27,978 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 11:13:27] "POST /predict HTTP/1.1" 200 -
+2025-03-14 22:41:15,122 - __main__ - INFO - File saved to uploads\aae801c5-9f17-4c5e-af99-b26b958cc2a5_051d64772f1b38ff476fbf0a807f365a_images.jpg
+2025-03-14 22:41:17,401 - __main__ - INFO - Function predict took 2.34 seconds to execute
+2025-03-14 22:41:17,448 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 22:41:17] "POST /predict HTTP/1.1" 200 -
+2025-03-15 01:37:28,440 - __main__ - INFO - Loading model from fashion_product_model (1).h5
+2025-03-15 01:37:30,169 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-03-15 01:37:30,183 - __main__ - INFO - Loading label encoders from label_encoders.pkl
+2025-03-15 01:37:30,338 - __main__ - INFO - Model and label encoders loaded successfully
+2025-03-15 01:37:30,341 - __main__ - INFO - Starting Fashion Product Classification API
+2025-03-15 01:37:30,374 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.100:5000
+2025-03-15 01:37:30,374 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-15 01:37:35,185 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 01:37:35] "GET / HTTP/1.1" 200 -
+2025-03-15 01:37:37,358 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 01:37:37] "[36mGET /sample_images/WhatsApp%20Image%202025-03-08%20at%2021.09.05_dc2b24aa.jpg HTTP/1.1[0m" 304 -
+2025-03-15 01:37:37,359 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 01:37:37] "[36mGET /sample_images/051d64772f1b38ff476fbf0a807f365a_images.jpg HTTP/1.1[0m" 304 -
+2025-03-15 01:37:37,364 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 01:37:37] "[36mGET /sample_images/4850873d0c417e6480a26059f83aac29_images.jpg HTTP/1.1[0m" 304 -
+2025-03-15 01:37:37,372 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 01:37:37] "[36mGET /sample_images/9c1b19682ecf926c296f520d5d6e0972_images.jpg HTTP/1.1[0m" 304 -
+2025-03-15 01:37:37,392 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 01:37:37] "[36mGET /sample_images/8153dc35d9a5420eeb93922067137db6_images.jpg HTTP/1.1[0m" 304 -
+2025-03-15 01:37:37,393 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 01:37:37] "[36mGET /sample_images/7a5b82d1372a7a5c6de67ae7a314fd91_images.jpg HTTP/1.1[0m" 304 -
+2025-03-15 01:37:37,455 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 01:37:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-15 01:37:55,868 - __main__ - INFO - File saved to uploads\da46bb15-0cc4-426f-b7c0-c00901538861_051d64772f1b38ff476fbf0a807f365a_images.jpg
+2025-03-15 01:37:58,377 - __main__ - INFO - Function predict took 2.53 seconds to execute
+2025-03-15 01:37:58,378 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 01:37:58] "POST /predict HTTP/1.1" 200 -
+2025-03-15 23:41:27,605 - __main__ - INFO - Loading model from fashion_product_model (1).h5
+2025-03-15 23:41:29,378 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-03-15 23:41:29,393 - __main__ - INFO - Loading label encoders from label_encoders.pkl
+2025-03-15 23:41:29,553 - __main__ - INFO - Model and label encoders loaded successfully
+2025-03-15 23:41:29,558 - __main__ - INFO - Starting Fashion Product Classification API
+2025-03-15 23:41:29,605 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.106:5000
+2025-03-15 23:41:29,607 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-15 23:41:40,849 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 23:41:40] "GET / HTTP/1.1" 200 -
+2025-03-15 23:41:43,043 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 23:41:43] "[36mGET /sample_images/4850873d0c417e6480a26059f83aac29_images.jpg HTTP/1.1[0m" 304 -
+2025-03-15 23:41:43,044 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 23:41:43] "[36mGET /sample_images/051d64772f1b38ff476fbf0a807f365a_images.jpg HTTP/1.1[0m" 304 -
+2025-03-15 23:41:43,269 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 23:41:43] "[36mGET /sample_images/WhatsApp%20Image%202025-03-08%20at%2021.09.05_dc2b24aa.jpg HTTP/1.1[0m" 304 -
+2025-03-15 23:41:43,270 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 23:41:43] "[36mGET /sample_images/8153dc35d9a5420eeb93922067137db6_images.jpg HTTP/1.1[0m" 304 -
+2025-03-15 23:41:43,271 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 23:41:43] "[36mGET /sample_images/7a5b82d1372a7a5c6de67ae7a314fd91_images.jpg HTTP/1.1[0m" 304 -
+2025-03-15 23:41:43,271 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 23:41:43] "[36mGET /sample_images/9c1b19682ecf926c296f520d5d6e0972_images.jpg HTTP/1.1[0m" 304 -
+2025-03-15 23:41:43,368 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 23:41:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-15 23:45:41,809 - __main__ - INFO - File saved to uploads\4844b21a-b9e9-4fed-81ee-e918326fa6d5_051d64772f1b38ff476fbf0a807f365a_images.jpg
+2025-03-15 23:45:44,383 - __main__ - INFO - Function predict took 2.59 seconds to execute
+2025-03-15 23:45:44,383 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 23:45:44] "POST /predict HTTP/1.1" 200 -
+2025-03-15 23:51:13,149 - __main__ - INFO - File saved to uploads\f89c7356-25e9-4975-8837-5183e1f90d4b_9c1b19682ecf926c296f520d5d6e0972_images.jpg
+2025-03-15 23:51:13,371 - __main__ - INFO - Function predict took 0.23 seconds to execute
+2025-03-15 23:51:13,372 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 23:51:13] "POST /predict HTTP/1.1" 200 -
+2025-03-15 23:52:03,078 - __main__ - INFO - File saved to uploads\98cae0a7-3edc-4ba6-900e-da9e5f9e94c1_051d64772f1b38ff476fbf0a807f365a_images.jpg
+2025-03-15 23:52:03,313 - __main__ - INFO - Function predict took 0.25 seconds to execute
+2025-03-15 23:52:03,314 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 23:52:03] "POST /predict HTTP/1.1" 200 -
+2025-03-16 16:03:10,411 - __main__ - INFO - Loading model from best_fashion_model.h5
+2025-03-16 16:03:11,500 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-03-16 16:03:11,509 - __main__ - INFO - Loading label encoders from label_encoders.pkl
+2025-03-16 16:03:11,534 - __main__ - INFO - Model and label encoders loaded successfully
+2025-03-16 16:03:11,537 - __main__ - INFO - Starting Fashion Product Classification API
+2025-03-16 16:03:11,568 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.101:5000
+2025-03-16 16:03:11,568 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-16 16:03:14,514 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 16:03:14] "GET / HTTP/1.1" 200 -
+2025-03-16 16:03:15,353 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 16:03:15] "[36mGET /sample_images/7a5b82d1372a7a5c6de67ae7a314fd91_images.jpg HTTP/1.1[0m" 304 -
+2025-03-16 16:03:15,358 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 16:03:15] "[36mGET /sample_images/9c1b19682ecf926c296f520d5d6e0972_images.jpg HTTP/1.1[0m" 304 -
+2025-03-16 16:03:15,374 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 16:03:15] "[36mGET /sample_images/051d64772f1b38ff476fbf0a807f365a_images.jpg HTTP/1.1[0m" 304 -
+2025-03-16 16:03:15,375 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 16:03:15] "[36mGET /sample_images/WhatsApp%20Image%202025-03-08%20at%2021.09.05_dc2b24aa.jpg HTTP/1.1[0m" 304 -
+2025-03-16 16:03:15,376 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 16:03:15] "[36mGET /sample_images/8153dc35d9a5420eeb93922067137db6_images.jpg HTTP/1.1[0m" 304 -
+2025-03-16 16:03:15,389 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 16:03:15] "[36mGET /sample_images/4850873d0c417e6480a26059f83aac29_images.jpg HTTP/1.1[0m" 304 -
+2025-03-16 16:03:23,629 - __main__ - INFO - File saved to uploads\7581c596-89b0-485c-bb3c-6f160a25f603_051d64772f1b38ff476fbf0a807f365a_images.jpg
+2025-03-16 16:03:25,701 - __main__ - INFO - Function predict took 2.08 seconds to execute
+2025-03-16 16:03:25,702 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 16:03:25] "POST /predict HTTP/1.1" 200 -
+2025-03-16 16:03:33,908 - __main__ - INFO - File saved to uploads\96eaf49d-7eea-4a5a-a788-cb32f4cdff2d_051d64772f1b38ff476fbf0a807f365a_images.jpg
+2025-03-16 16:03:34,041 - __main__ - INFO - Function predict took 0.14 seconds to execute
+2025-03-16 16:03:34,041 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 16:03:34] "POST /predict HTTP/1.1" 200 -
+2025-03-16 16:03:44,240 - __main__ - INFO - File saved to uploads\5350f84a-bf50-41d5-840a-eabf15d27e40_7a5b82d1372a7a5c6de67ae7a314fd91_images.jpg
+2025-03-16 16:03:44,418 - __main__ - INFO - Function predict took 0.18 seconds to execute
+2025-03-16 16:03:44,418 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 16:03:44] "POST /predict HTTP/1.1" 200 -
+2025-03-16 16:03:50,144 - __main__ - INFO - File saved to uploads\d9b93d7e-0644-4510-bbeb-3e66c3f333f8_7a5b82d1372a7a5c6de67ae7a314fd91_images.jpg
+2025-03-16 16:03:50,291 - __main__ - INFO - Function predict took 0.15 seconds to execute
+2025-03-16 16:03:50,292 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 16:03:50] "POST /predict HTTP/1.1" 200 -
+2025-03-16 16:06:46,393 - __main__ - INFO - Loading model from fashion_product_model (1).h5
+2025-03-16 16:06:47,147 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-03-16 16:06:47,154 - __main__ - INFO - Loading label encoders from label_encoders.pkl
+2025-03-16 16:06:47,172 - __main__ - INFO - Model and label encoders loaded successfully
+2025-03-16 16:06:47,174 - __main__ - INFO - Starting Fashion Product Classification API
+2025-03-16 16:06:47,188 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.101:5000
+2025-03-16 16:06:47,188 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-16 16:06:49,440 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 16:06:49] "GET / HTTP/1.1" 200 -
+2025-03-16 16:06:49,478 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 16:06:49] "[36mGET /sample_images/051d64772f1b38ff476fbf0a807f365a_images.jpg HTTP/1.1[0m" 304 -
+2025-03-16 16:06:49,479 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 16:06:49] "[36mGET /sample_images/4850873d0c417e6480a26059f83aac29_images.jpg HTTP/1.1[0m" 304 -
+2025-03-16 16:06:49,496 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 16:06:49] "[36mGET /sample_images/7a5b82d1372a7a5c6de67ae7a314fd91_images.jpg HTTP/1.1[0m" 304 -
+2025-03-16 16:06:49,497 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 16:06:49] "[36mGET /sample_images/8153dc35d9a5420eeb93922067137db6_images.jpg HTTP/1.1[0m" 304 -
+2025-03-16 16:06:49,500 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 16:06:49] "[36mGET /sample_images/9c1b19682ecf926c296f520d5d6e0972_images.jpg HTTP/1.1[0m" 304 -
+2025-03-16 16:06:49,505 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 16:06:49] "[36mGET /sample_images/WhatsApp%20Image%202025-03-08%20at%2021.09.05_dc2b24aa.jpg HTTP/1.1[0m" 304 -
+2025-03-16 16:06:59,713 - __main__ - INFO - File saved to uploads\ae06129c-eee0-4e3b-b5b6-52187fe7410c_051d64772f1b38ff476fbf0a807f365a_images.jpg
+2025-03-16 16:07:00,092 - __main__ - INFO - Function predict took 0.38 seconds to execute
+2025-03-16 16:07:00,093 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 16:07:00] "POST /predict HTTP/1.1" 200 -
+2025-03-16 16:07:09,498 - __main__ - INFO - File saved to uploads\7c1b77cc-76f6-4ad3-8ab9-1a100ea89179_051d64772f1b38ff476fbf0a807f365a_images.jpg
+2025-03-16 16:07:09,634 - __main__ - INFO - Function predict took 0.14 seconds to execute
+2025-03-16 16:07:09,634 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 16:07:09] "POST /predict HTTP/1.1" 200 -
+2025-03-16 16:07:28,818 - __main__ - INFO - File saved to uploads\bfae93d3-9dbd-4eca-81e9-0d6ceaf473be_9c1b19682ecf926c296f520d5d6e0972_images.jpg
+2025-03-16 16:07:28,963 - __main__ - INFO - Function predict took 0.16 seconds to execute
+2025-03-16 16:07:28,964 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 16:07:28] "POST /predict HTTP/1.1" 200 -
+2025-03-16 16:07:38,226 - __main__ - INFO - File saved to uploads\81cdfec1-fef1-40af-ab15-adf00661d401_9c1b19682ecf926c296f520d5d6e0972_images.jpg
+2025-03-16 16:07:38,363 - __main__ - INFO - Function predict took 0.14 seconds to execute
+2025-03-16 16:07:38,364 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 16:07:38] "POST /predict HTTP/1.1" 200 -
